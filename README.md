@@ -1,6 +1,7 @@
 # CoronaAvondklokSensor
 Templating Sensor Home Assistant for CoronaAvondklok
 
+![Alt text](https://github.com/stefanbosch/CoronaAvondklokSensor/blob/main/screenshot.png)
 
 **Add the following to your configuration.yaml:**
 ```
@@ -38,7 +39,7 @@ sensor:
 
 
 
-
+# Templating:
 
 ```
 {% if (now().replace(tzinfo=None) < strptime('2021-02-10 04:30:00','%Y-%m-%d %H:%M:%S')) %}
