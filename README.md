@@ -5,7 +5,7 @@ Templating Sensor Home Assistant for CoronaAvondklok
   {% if (now().hour+(now().minute/60) >=21 or now().hour+(now().minute/60) <= 4.5) %}
     Actief
   {% else %}
-    over {{ '%.2f'%(21 - (now().hour+(now().minute/60))) }} uur
+    Over {{ '%.2f'%(21 - (now().hour+(now().minute/60))) }} uur
   {% endif %}
 {% else %}
   Non-Actief
@@ -18,7 +18,7 @@ Templating Sensor Home Assistant for CoronaAvondklok
   {% if (now().hour+(now().minute/60) >=21 or now().hour+(now().minute/60) <= 4.5) %}
     Actief
   {% else %}
-    over {{ (timedelta( hours=21-(now().hour+(now().minute/60)) )|string)[:-3] }} uur
+    Over {{ (timedelta( hours=21-(now().hour+(now().minute/60)) )|string)[:-3] }} uur
   {% endif %}
 {% else %}
   Non-Actief
