@@ -3,6 +3,8 @@ Templating Sensor Home Assistant for CoronaAvondklok
 
 ![Alt text](https://github.com/stefanbosch/CoronaAvondklokSensor/blob/main/screenshot.png)
 
+Curfew lasts till 3rd of march 4:30 AM
+
 **Add the following to your configuration.yaml:**
 ```yaml
 - platform: template
@@ -66,7 +68,7 @@ Templating Sensor Home Assistant for CoronaAvondklok
 
 # Templating:
 
-```
+```yaml
 {% if (now().replace(tzinfo=None) < strptime('2021-02-10 04:30:00','%Y-%m-%d %H:%M:%S')) %}
   {% if (now().hour+(now().minute/60) >=21 or now().hour+(now().minute/60) <= 4.5) %}
     Actief
@@ -78,7 +80,7 @@ Templating Sensor Home Assistant for CoronaAvondklok
 {% endif %}
 ```
 
-```
+```yaml
 {% set regulation = strptime('2021-02-10 04:30:00','%Y-%m-%d %H:%M:%S') %}
 {% if (now().replace(tzinfo=None) < regulation) %}
   {% if (now().hour+(now().minute/60) >=21 or now().hour+(now().minute/60) <= 4.5) %}
